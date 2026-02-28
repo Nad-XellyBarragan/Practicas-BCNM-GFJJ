@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos - Práctica 1</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <input type="checkbox" id="darkmode-toggle">
+
+    <div class="main-layout vertical-layout">
+        
+        <nav class="top-nav">
+            <a href="index.html" class="btn-regresar">
+                <span>←</span> Regresar a página principal
+            </a>
+        </nav>
+
+        <main class="content-area centered-content">
+            
+            <header class="page-header">
+                <h1>Créditos de la Práctica</h1>
+            </header>
+
+            <section class="product-grid">
+                
+                <article class="card">
+                    <div class="card-info credit-card">
+                        <h2 class="section-title">Acerca de mí</h2>
+                        <div class="profile-container">
+                            <div class="profile-circle">
+                                <img src="assets/images/nad.jpeg" alt="Nad-Xelly">
+                            </div>
+                            <div class="card-text">
+                                <p><strong>Nombre:</strong> Nad-Xelly Barragán Cruz</p>
+                                <p><strong>Carrera:</strong> Ingeniería en Telemática</p>
+                                <p><strong>Semestre:</strong> Octavo</p>
+                                <p><strong>Materia:</strong> Ingeniería Web</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-info credit-card">
+                        <h2 class="section-title">Acerca de mí</h2>
+                        <div class="profile-container">
+                            <div class="profile-circle">
+                                <img src="assets/images/julian.jpeg" alt="Jose Julian">
+                            </div>
+                            <div class="card-text">
+                                <p><strong>Nombre:</strong> Jose Julian Gutierrez Flores</p>
+                                <p><strong>Carrera:</strong> Ingeniería en Telemática</p>
+                                <p><strong>Semestre:</strong> Octavo</p>
+                                <p><strong>Materia:</strong> Ingeniería Web</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div> 
+    <script>
+    const darkToggle = document.getElementById('darkmode-toggle');
+
+    // 1. Al cargar la página, revisar si ya estaba activado antes
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        darkToggle.checked = true;
+    }
+
+    // 2. Escuchar cuando el usuario le pica al botón
+    darkToggle.addEventListener('change', () => {
+        if (darkToggle.checked) {
+            localStorage.setItem('dark-mode', 'enabled'); // Guarda que está activado
+        } else {
+            localStorage.setItem('dark-mode', 'disabled'); // Guarda que está desactivado
+        }
+    });
+</script>
+</body>
+</html>

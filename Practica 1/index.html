@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Flexbox - 1/5 Layout</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <input type="checkbox" id="darkmode-toggle">
+
+    <label for="darkmode-toggle" class="darkmode-label-fijo">
+        MODO OSCURO
+    </label>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+    <header class="sidebar-header">
+        <h1>MENU</h1>
+    </header>
+    <nav class="sidebar-nav">
+        <ul>
+            <li class="has-submenu">
+                <input type="checkbox" id="check-cvs" class="menu-check">
+                <label for="check-cvs" class="menu-button">CV's</label>
+                <ul class="submenu">
+                    <li><a href="juliancv.html">JULIAN</a></li>
+                    <li><a href="nadcv.html">NAD</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <input type="checkbox" id="check-portafolio" class="menu-check">
+                <label for="check-portafolio" class="menu-button">PORTAFOLIO</label>
+                <ul class="submenu">
+                    <li><a href="portjulian.html">JULIAN</a></li>
+                    <li><a href="portnad.html">NAD</a></li>
+                </ul>
+            </li>
+
+            <li><a href="creditos.html" class="menu-button no-arrow">CREDITOS</a></li>
+            
+            </ul>
+    </nav>
+</aside>
+
+        <main class="content-area">
+            <section class="welcome-box">
+                <h2>Bienvenido</h2>
+                <p>Esta es la pagina de nuestra practica 1.</p>
+                <p>El menú lateral sirve para acceder a lo solicitado dentro de la practica.</p>
+                <p>Los integrantes somos:<br/>- Barragán Cruz Nad-Xelly Montserrat <br/>- Gutierrez Flores Jose Julian</p>
+            </section>
+
+            <section class="catalog">
+                <div class="product-grid">
+                    <article class="card">
+                        <img src="assets/images/upiita.png" alt="Logo UPIITA">
+                        <div class="card-info">
+                            <h4>UPIITA</h4>
+                            <p>Ingeniería en Telemática - IPN.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="assets/images/ipn.png" alt="Logo IPN">
+                        <div class="card-info">
+                            <h4>IPN</h4>
+                            <p>Instituto Politecnico Nacional.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mi Sitio Web | Desarrollado con Flexbox</p>
+    </footer>
+
+    <script>
+        // Lógica de tus submenús
+        document.getElementById('btn-cvs')?.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            const submenu = document.getElementById('cv-submenu');
+            submenu.classList.toggle('show');
+        });
+
+        const darkToggle = document.getElementById('darkmode-toggle');
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            darkToggle.checked = true;
+        }
+
+        darkToggle.addEventListener('change', () => {
+            if (darkToggle.checked) {
+                localStorage.setItem('dark-mode', 'enabled');
+            } else {
+                localStorage.setItem('dark-mode', 'disabled');
+            }
+        });
+    </script>
+</body>
+</html>

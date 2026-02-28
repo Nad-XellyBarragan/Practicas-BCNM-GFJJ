@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Julian Gutierrez</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <input type="checkbox" id="darkmode-toggle">
+
+    <div class="container-principal">
+        <nav class="top-nav">
+            <a href="index.html" class="btn-regresar">
+                <span>←</span> Regresar a página principal
+            </a>
+        </nav>
+        <header class="header bg-primario">
+            <div class="header-info">
+                <h1>Julian Gutierrez</h1>
+                <p class="tag bg-secundario">Ingeniero en Energía</p>
+            </div>
+            <div class="header-contacto">
+                <p>Calle Guadalajara, Mz 88 Lt 18</p>
+                <p>Telefono: (55) 1234-5678</p>
+                <p>Correo: juliangf@gmail.com</p>
+            </div>
+        </header>
+
+        <div class="wrapper-contenido">
+            <aside class="sidebar">
+                <section class="tarjeta-sidebar border-acento">
+                    <h3 class="txt-acento">Idiomas</h3>
+                    <p><strong>Inglés:</strong> Avanzado</p>
+                </section>
+
+                <section class="tarjeta-sidebar bg-gris">
+                    <h3 class="txt-primario">Educación</h3>
+                    <div class="item-educacion">
+                        <p><strong>Ingeniería en Energía</strong></p>
+                        <span class="mencion">Graduado con honores académicos</span>
+                    </div>
+                </section>
+
+                <section class="tarjeta-sidebar">
+                    <h3 class="txt-acento">Certificaciones</h3>
+                    <div class="grid-certificados">
+                        <span class="pill">Sistemas Eléctricos</span>
+                        <span class="pill">Energías Limpias</span>
+                        <span class="pill">Alumno Destacado</span>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="principal">
+                <section class="seccion-texto">
+                    <h2 class="titulo-seccion txt-secundario">Perfil Profesional</h2>
+                    <p>Soy una persona enérgica, metódica y confiable, con fuertes habilidades en la comunicación y las relaciones humanas. Mi actitud siempre es positiva y estoy comprometido con la ejecución efectiva de mis tareas.</p>
+                </section>
+
+                <section class="seccion-texto">
+                    <h2 class="titulo-seccion txt-secundario">Experiencia Laboral</h2>
+                    
+                    <article class="bloque-experiencia">
+                        <div class="fila-titulo">
+                            <strong class="txt-acento">Operaciones e Instalaciones – Lottus</strong>
+                            <span class="fecha">2019 - Actualidad</span>
+                        </div>
+                        <p>Encargado de la instalación y operación de los diversos servicios que brinda la empresa, siendo responsable directo del funcionamiento y uso adecuado del servicio brindado.</p>
+                    </article>
+
+                    <article class="bloque-experiencia">
+                        <div class="fila-titulo">
+                            <strong class="txt-acento">Instalador de Sistemas – Rotoplas</strong>
+                            <span class="fecha">2018 - 2019</span>
+                        </div>
+                        <p>Instalador de sistemas de filtración de agua en empresas privadas y públicas con el fin del manejo adecuado y reutilización del recurso. Participación en proyectos de instalación en zonas rurales.</p>
+                    </article>
+
+                    <article class="bloque-experiencia">
+                        <div class="fila-titulo">
+                            <strong class="txt-acento">Auxiliar de Instalaciones – CFE</strong>
+                            <span class="fecha">2016 - 2017</span>
+                        </div>
+                        <p>Servicio social para titulación en la empresa CFE, desempeñando funciones como auxiliar en instalaciones de servicios de energía.</p>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </div>
+<script>
+    const darkToggle = document.getElementById('darkmode-toggle');
+
+    // 1. Al cargar la página, revisar si ya estaba activado antes
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        darkToggle.checked = true;
+    }
+
+    // 2. Escuchar cuando el usuario le pica al botón
+    darkToggle.addEventListener('change', () => {
+        if (darkToggle.checked) {
+            localStorage.setItem('dark-mode', 'enabled'); // Guarda que está activado
+        } else {
+            localStorage.setItem('dark-mode', 'disabled'); // Guarda que está desactivado
+        }
+    });
+</script>
+</body>
+</html>

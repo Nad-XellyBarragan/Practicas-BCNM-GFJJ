@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diplomas - Nad-Xelly Barragán</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<input type="checkbox" id="darkmode-toggle" style="display: none;">
+    <div class="contenedor-diplomas">
+        <nav class="top-nav">
+            <a href="index.html" class="btn-regresar">
+                <span>←</span> Regresar a página principal
+            </a>
+        </nav>
+        <div class="certificado">
+            <h1>CERTIFICACIÓN</h1>
+            <p>Se certifica que:</p>
+            <h2 class="nombre">Nad-Xelly Montserrat Barragán Cruz</h2>
+            <p>Ha completado exitosamente el programa:</p>
+            <h3 class="curso">Meta Front-End Developer</h3>
+            <div class="pie">
+                <p>Emisión: 2024</p>
+                <p>____________________<br>Coursera / Meta</p>
+            </div>
+        </div>
+
+        <div class="certificado">
+            <h1>CONSTANCIA</h1>
+            <p>Se otorga el presente a:</p>
+            <h2 class="nombre">Nad-Xelly Montserrat Barragán Cruz</h2>
+            <p>Por acreditar satisfactoriamente el curso:</p>
+            <h3 class="curso">SQL Avanzado para Ciencia de Datos</h3>
+            <div class="pie">
+                <p>Año: 2022</p>
+                <p>____________________<br>LinkedIn Learning</p>
+            </div>
+        </div>
+    </div>
+<script>
+    const darkToggle = document.getElementById('darkmode-toggle');
+
+    // 1. Al cargar la página, revisar si ya estaba activado antes
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        darkToggle.checked = true;
+    }
+
+    // 2. Escuchar cuando el usuario le pica al botón
+    darkToggle.addEventListener('change', () => {
+        if (darkToggle.checked) {
+            localStorage.setItem('dark-mode', 'enabled'); // Guarda que está activado
+        } else {
+            localStorage.setItem('dark-mode', 'disabled'); // Guarda que está desactivado
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diplomas - Julian Gutierrez</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<input type="checkbox" id="darkmode-toggle" style="display: none;">
+    <div class="contenedor-diplomas">
+        <nav class="top-nav">
+            <a href="index.html" class="btn-regresar">
+                <span>←</span> Regresar a página principal
+            </a>
+        </nav>
+        <div class="certificado">
+            <h1>CONSTANCIA</h1>
+            <p>Se otorga el presente a:</p>
+            <h2 class="nombre">Julian Gutierrez</h2>
+            <p>Por su participación en el:</p>
+            <h3 class="curso">Curso en Sistemas Eléctricos</h3>
+            <div class="pie">
+                <p>Fecha: 2017</p>
+                <p>____________________<br>Firma Institucional</p>
+            </div>
+        </div>
+
+        <div class="certificado">
+            <h1>DIPLOMA</h1>
+            <p>Se entrega a:</p>
+            <h2 class="nombre">Julian Gutierrez</h2>
+            <p>Por haber cursado con éxito:</p>
+            <h3 class="curso">Energías Limpias</h3>
+            <div class="pie">
+                <p>Instituto Increíble</p>
+                <p>____________________<br>Sello Editorial</p>
+            </div>
+        </div>
+
+        <div class="certificado">
+            <h1>RECONOCIMIENTO</h1>
+            <p>Mención honorífica a:</p>
+            <h2 class="nombre">Julian Gutierrez</h2>
+            <p>Por su distinción como:</p>
+            <h3 class="curso">Alumno Destacado</h3>
+            <div class="pie">
+                <p>Año: 2012</p>
+                <p>____________________<br>Dirección Académica</p>
+            </div>
+        </div>
+    </div>
+<script>
+    const darkToggle = document.getElementById('darkmode-toggle');
+
+    // 1. Al cargar la página, revisar si ya estaba activado antes
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        darkToggle.checked = true;
+    }
+
+    // 2. Escuchar cuando el usuario le pica al botón
+    darkToggle.addEventListener('change', () => {
+        if (darkToggle.checked) {
+            localStorage.setItem('dark-mode', 'enabled'); // Guarda que está activado
+        } else {
+            localStorage.setItem('dark-mode', 'disabled'); // Guarda que está desactivado
+        }
+    });
+</script>
+</body>
+</html>

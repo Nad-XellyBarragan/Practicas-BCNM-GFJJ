@@ -1,0 +1,321 @@
+/* 1. VARIABLES Y ESTRUCTURA GLOBAL*/
+:root {
+    --color-primario: #8940CF;  
+    --color-menu-header: #D737B3; 
+    --color-secundario: #D737B3;  
+    --color-acento: #594AD2; 
+    --fondo-blanco: #ffffff;
+    --texto-negro: #000000;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+/* 2. SIDEBAR (INDEX Y CRÉDITOS) */
+.sidebar {
+    flex: 0 0 20%; 
+    background-color: var(--color-primario);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    background-color: var(--color-menu-header);
+    text-align: center;
+    padding: 20px;
+}
+
+.sidebar-header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav a, .darkmode-label {
+    text-decoration: none;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover, .darkmode-label:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 35px;
+}
+
+/* SUBMENÚ CV'S */
+.submenu {
+    list-style: none;
+    padding-left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+}
+
+.submenu.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.has-submenu > a::after {
+    content: ' ▼';
+    font-size: 0.7rem;
+    float: right;
+}
+
+/* =============================================
+   3. ÁREA DE CONTENIDO Y TARJETAS
+   ============================================= */
+.content-area {
+    flex: 0 0 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--fondo-blanco);
+}
+
+.welcome-box {
+    border: 2px solid var(--color-primario);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 1 calc(50% - 10px); 
+    background-color: var(--fondo-blanco);
+    border: 2px solid var(--color-secundario);
+    border-radius: 12px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* 4. CRÉDITOS Y BOTÓN REGRESAR */
+.top-nav {
+    padding: 30px;
+    text-align: left;
+}
+
+.btn-regresar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px; 
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.btn-regresar:hover {
+    background-color: var(--color-secundario);
+}
+
+.profile-circle {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    border: 4px solid var(--color-primario);
+    overflow: hidden;
+}
+
+/* 5. ESTILOS PROPIOS DE LOS CVs (JULIAN Y NAD)*/
+.container-principal, .contenedor-cv {
+    max-width: 900px;
+    width: 100%;
+    background: var(--fondo-blanco);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-contenido, .layout-flex {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.titulo-seccion, .sub-titulo {
+    font-size: 1.3rem;
+    border-bottom: 3px solid var(--color-secundario);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.exp-item, .bloque-experiencia {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid var(--color-primario);
+}
+
+.pill {
+    background: var(--color-acento);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+/* 6. MODO OSCURO (PERSISTENTE)*/
+#darkmode-toggle { display: none; }
+
+body:has(#darkmode-toggle:checked) {
+    background-color: #121212 !important;
+    --fondo-blanco: #1e1e1e;
+    --texto-negro: #ffffff;
+    --color-primario: #33065E; 
+    --color-menu-header: #66004F;
+    --color-secundario: #66004F;
+}
+
+body:has(#darkmode-toggle:checked) * {
+    color: var(--texto-negro) !important;
+}
+
+body:has(#darkmode-toggle:checked) .certificado {
+    background-color: #1a1a1a;
+    border-color: var(--color-secundario); 
+    box-shadow: 10px 10px 0px #000;
+}
+
+/* --- LÓGICA DE MENÚS SIN JAVASCRIPT --- */
+.menu-check { display: none; }
+
+.menu-button {
+    text-decoration: none;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 35px;
+}
+
+.has-submenu .menu-button::after {
+    content: ' ▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.no-arrow::after { content: "" !important; }
+
+.submenu {
+    list-style: none;
+    padding-left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+}
+
+.menu-check:checked ~ .submenu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.submenu a {
+    padding: 12px 45px;
+    font-size: 1rem;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- ESTILOS DE PORTAFOLIO (DIPLOMAS) --- */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Verdana', sans-serif;
+    padding: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-diplomas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.certificado {
+    background-color: white;
+    width: 750px;
+    padding: 50px;
+    border: 5px solid #333;
+    text-align: center;
+    box-shadow: 10px 10px 0px #ccc;
+    transition: all 0.3s ease;
+}
+
+h1 { font-size: 30px; text-decoration: underline; margin-bottom: 20px; }
+.nombre { font-size: 35px; color: #594AD2; margin: 20px 0; }
+.curso { font-size: 24px; color: #D737B3; margin-bottom: 10px; }
+.pie { display: flex; justify-content: space-between; margin-top: 50px; font-size: 14px; }
+
+/* CLASE SOLICITADA PARA EL BOTÓN ARRIBA DERECHA */
+.darkmode-label-fijo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--color-menu-header);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

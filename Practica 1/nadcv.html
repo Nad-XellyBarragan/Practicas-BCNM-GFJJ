@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nad-Xelly Montserrat</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <input type="checkbox" id="darkmode-toggle">
+
+    <div class="contenedor-cv">
+        <nav class="top-nav">
+            <a href="index.html" class="btn-regresar">
+                <span>←</span> Regresar a página principal
+            </a>
+        </nav>
+        <header class="header bg-primario">
+            <div class="header-texto">
+                <h1>Nad-Xelly Montserrat Barragán Cruz</h1>
+                <p class="tag bg-secundario">Ingeniera en Sistemas Computacionales</p>
+            </div>
+            <div class="header-contacto">
+                <p>Reside : Ciudad de México</p>
+                <p>Telefono: 55 1234 5678</p>
+                <p>Correo: nadxelly@gmail.com</p>
+                <p>Portafolio: linkedin.com/in/nadxelly</p>
+            </div>
+        </header>
+
+        <div class="layout-flex">
+            <aside class="columna-lateral">
+                <section class="caja-box">
+                    <h3 class="txt-acento">Habilidades</h3>
+                    <div class="flex-skills">
+                        <span class="pill">JavaScript</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">MySQL</span>
+                        <span class="pill">MongoDB</span>
+                        <span class="pill">Git</span>
+                        <span class="pill">Linux</span>
+                    </div>
+                </section>
+
+                <section class="caja-box bg-gris">
+                    <h3 class="txt-primario">Idiomas</h3>
+                    <p><strong>Español:</strong> Nativo</p>
+                    <p><strong>Inglés:</strong> Intermedio B1</p>
+                </section>
+
+                <section class="caja-box">
+                    <h3 class="txt-acento">Formación</h3>
+                    <div class="educacion">
+                        <p><strong>IPN</strong></p>
+                        <p>Ingeniería en Sistemas</p>
+                        <hr>
+                        <p><strong>CECyT No. 9</strong></p>
+                        <p>Técnico en Programación</p>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="columna-principal">
+                <section class="caja-box">
+                    <h2 class="sub-titulo txt-secundario">Perfil Profesional</h2>
+                    <p>Ingeniera en Sistemas Computacionales con experiencia en desarrollo web y administración de bases de datos. Persona organizada, proactiva y con habilidades para el trabajo en equipo, enfocada en soluciones tecnológicas eficientes.</p>
+                </section>
+
+                <section class="caja-box">
+                    <h2 class="sub-titulo txt-secundario">Experiencia Profesional</h2>
+                    
+                    <article class="exp-item">
+                        <div class="flex-espaciado">
+                            <strong class="txt-acento">TechSolutions MX</strong>
+                            <span class="fecha">2024 - Actualidad</span>
+                        </div>
+                        <p class="puesto">Desarrolladora Web Jr.</p>
+                        <ul class="lista-dots">
+                            <li>Desarrollo de aplicaciones con HTML, CSS y JavaScript.</li>
+                            <li>Implementación de bases de datos en MySQL.</li>
+                        </ul>
+                    </article>
+
+                    <article class="exp-item">
+                        <div class="flex-espaciado">
+                            <strong class="txt-acento">Innovatec Software</strong>
+                            <span class="fecha">2023 - 2023</span>
+                        </div>
+                        <p class="puesto">Practicante de Desarrollo</p>
+                        <ul class="lista-dots">
+                            <li>Desarrollo backend con Node.js y Scrum.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="caja-box">
+                    <h2 class="sub-titulo txt-secundario">Cursos y Certificaciones</h2>
+                    
+                    <div class="curso-card">
+                        <div class="flex-espaciado">
+                            <strong>Meta Front-End Developer</strong>
+                            <span class="fecha">2024</span>
+                        </div>
+                        <p>Certificación profesional en React y UX.</p>
+                    </div>
+
+                    <div class="curso-card">
+                        <div class="flex-espaciado">
+                            <strong>Cisco Cyber-Essentials</strong>
+                            <span class="fecha">2023</span>
+                        </div>
+                        <p>Fundamentos de Seguridad Informática.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+<script>
+    const darkToggle = document.getElementById('darkmode-toggle');
+
+    // 1. Al cargar la página, revisar si ya estaba activado antes
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        darkToggle.checked = true;
+    }
+
+    // 2. Escuchar cuando el usuario le pica al botón
+    darkToggle.addEventListener('change', () => {
+        if (darkToggle.checked) {
+            localStorage.setItem('dark-mode', 'enabled'); // Guarda que está activado
+        } else {
+            localStorage.setItem('dark-mode', 'disabled'); // Guarda que está desactivado
+        }
+    });
+</script>
+</body>
+</html>
