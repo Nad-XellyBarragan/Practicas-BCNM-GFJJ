@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="../css/formStyles.css" type="text/css" />    
+</head>
+</head>
+<body>
+<div class="container">  
+  <form id="loginForm" novalidate>
+    <!-- Correo -->
+     <label for="correo"></label>
+    <input type="email" id="correo" placeholder="Correo electrónico" name="correo" required>
+    <div id="error-correo" class="error"></div>
+
+    <!-- Contraseña -->
+     <label for="contrasena"></label>
+    <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena"required minlength="6">
+    <div id="error-contrasena" class="error"></div>
+
+    <!-- Botón -->
+    <div class="btnContainer">
+       <button type="submit" class="submit">Iniciar Sesión</button>
+    </div>
+    
+
+    <!-- Links -->
+    <div class="links">
+      <a href="/users/recory">¿Olvidaste tu contraseña?</a>
+      <a href="/users/registro">Crear cuenta</a>
+    </div>
+
+  </form>
+</div>
+
+ <script src="/js/validateFormIS.js"></script>
+
+</body>
+</html>

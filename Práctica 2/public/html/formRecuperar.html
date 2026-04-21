@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Contraseña</title>
+    <!-- Usamos el mismo CSS para que se vea igual al de registro -->
+    <link rel="stylesheet" href="../css/formStyles.css" type="text/css" />
+</head>
+<body>
+    <h2>Recuperar Contraseña</h2>
+    <form id="formRecuperar" novalidate>
+        <p style="margin-bottom: 20px; font-size: 0.9em; color: #555;">
+            Introduce tu correo y responde a tu pregunta de seguridad para restablecer tu contraseña.
+        </p>
+
+        <!-- Sección del correo con botón de búsqueda -->
+<label for="correo">Correo electrónico:</label>
+<div style="display: flex; gap: 10px;">
+    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required style="flex: 1;">
+    <button type="button" id="btnBuscar" style="padding: 5px 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">Buscar</button>
+</div>
+<span class="mensaje" id="error-correo"></span>
+
+<!-- El select ahora estará vacío o deshabilitado hasta que se encuentre el usuario -->
+<label for="preguntarc">Tu pregunta de seguridad:</label>
+<select id="preguntarc" name="preguntarc" required disabled>
+    <option value="" disabled selected>-- Primero busca tu correo --</option>
+</select>
+        <label for="respuestarc">Respuesta:</label>
+        <input type="text" id="respuestarc" name="respuestarc" 
+               placeholder="Escribe tu respuesta" required disabled>
+        <span class="mensaje" id="error-respuestarc"></span>
+
+        <div class="btnContainer">
+            <button class="submit" type="submit">Validar Datos</button>
+            <a href="formInicioS.html" style="text-align: center; margin-top: 10px; display: block; color: #007bff; text-decoration: none; font-size: 0.9em;">Volver al inicio de sesión</a>
+        </div>
+    </form>
+
+    <!-- Modal para avisar al usuario -->
+    <div id="modal" class="modal-overlay">
+       <div class="modal-content">
+          <h2 id="modalTitle"></h2>    
+          <p id="modalMessage"></p>
+          <button id="closeModal">Aceptar</button>
+       </div>
+    </div>
+
+    <!-- Reutilizamos la lógica del JS para habilitar la casilla -->
+    <script src="../js/validateFormRe.js"></script>
+</body>
+</html>

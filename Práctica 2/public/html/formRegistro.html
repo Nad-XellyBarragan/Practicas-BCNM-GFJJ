@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario con validación</title>
+    <link rel="stylesheet" href="../css/formStyles.css" type="text/css" />   
+    
+</head>
+<body>
+    <h2>Formulario de registro</h2>
+    <form id="miFormulario" novalidate>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" 
+               pattern="[a-zA-Z\s]{3,50}" 
+               placeholder="Ej. Juan López" required autofocus>
+        <span class="mensaje" id="error-nombre"></span>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" 
+               pattern="^[a-zA-Z0-9]{6,13}$" 
+               required>
+        <span class="mensaje" id="error-contrasena"></span>
+
+        <label for="concontrasena">Confirmacion contraseña:</label>
+        <input type="password" id="concontrasena" name="concontrasena" 
+               pattern="^[a-zA-Z0-9]{6,13}$" 
+               required>
+        <span class="mensaje" id="error-concontrasena"></span>
+
+<!-- Pregunta de recuperación como Selector -->
+<label for="preguntarc">Pregunta recuperación cuenta:</label>
+<select id="preguntarc" name="preguntarc" required>
+    <option value="" disabled selected>-- Selecciona una pregunta --</option>
+    <option value="mascota">Nombre de tu mascota</option>
+    <option value="color">Color favorito</option>
+    <option value="personaje">Personaje favorito (anime/serie)</option>
+</select>
+<span class="mensaje" id="error-preguntarc"></span>
+
+<!-- Respuesta de recuperación (deshabilitada inicialmente) -->
+<label for="respuestarc">Respuesta recuperación cuenta:</label>
+<input type="text" id="respuestarc" name="respuestarc" 
+       placeholder="Primero selecciona una pregunta" 
+       required disabled>
+<span class="mensaje" id="error-respuestarc"></span>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo"
+               placeholder="correo@ejemplo.com" required>
+        <span class="mensaje" id="error-correo"></span>
+
+        <div class="btnContainer">            
+            <button class="submit" type="submit">Enviar</button>
+            <button class="reset" type="reset">Limpiar</button>
+        </div>
+
+        <div class="btnContainer">
+
+        <a href="/users/login" style="text-align: center; margin-top: 10px; display: block; color: #007bff; text-decoration: none; font-size: 0.9em;">Volver al inicio de sesión</a>
+        </div>
+
+    </form>
+
+    <div id="modal" class="modal-overlay">
+       <div class="modal-content">
+          <h2 id="modalTitle"></h2>    
+          <p id="modalMessage">Mensaje aquí...</p>
+          <button id="closeModal">Aceptar</button>
+
+       </div>
+    </div>
+    <!--pre id="resultado"></pre-->
+
+    <script src="../js/validateFormR.js"></script>
+
+
+</body>
+</html>

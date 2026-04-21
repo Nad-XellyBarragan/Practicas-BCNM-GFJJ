@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="/css/bienvenida.css">
+</head>
+<body>
+    <div class="welcome-card">
+        <div class="avatar">✨</div>
+        <h1>¡Hola, <span id="user-name">Usuario</span>!</h1>
+        <p>Es un placer tenerte de vuelta en nuestra plataforma.</p>
+        <div class="actions">
+            <a href="" class="btn-primary">Ir al Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para capturar el nombre de la URL
+        // Ejemplo: /welcome/Juan -> Juan
+        const pathSegments = window.location.pathname.split('/');
+        const name = pathSegments[pathSegments.length - 1];
+        
+        if (name) {
+            // Decodificamos por si el nombre tiene espacios (%20) o tildes
+            document.getElementById('user-name').textContent = decodeURIComponent(name);
+        }
+    </script>
+</body>
+</html>

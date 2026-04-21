@@ -1,0 +1,230 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body{
+    background:#f4f6f9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    min-width: 400px;
+    padding:20px;
+}
+
+.container {
+    background: rgb(206, 227, 247);
+    padding: 25px;
+    border-radius: 10px;
+    width: 370px;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+
+/* TITULO */
+h2{
+    margin-bottom:20px;
+    color:#333;
+    text-align:center;
+}
+
+/* FORMULARIO */
+form{
+    background:white;
+    padding:25px 30px;
+    border-radius:10px;
+    width:100%;
+    max-width:400px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+}
+
+/* LABEL */
+label{
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#444;
+}
+
+/* INPUTS */
+input{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+    transition:0.3s;
+    width:100%;
+}
+
+/* FOCUS */
+input:focus{
+    outline:none;
+    border-color:#4a90e2;
+    box-shadow:0 0 5px rgba(74,144,226,0.3);
+}
+
+/* VALIDACIONES */
+.valido{
+    border:2px solid #2ecc71;
+    background:#f0fff5;
+}
+
+.invalido{
+    border:2px solid #e74c3c;
+    background:#fff5f5;
+}
+
+/* MENSAJES */
+.mensaje{
+    color:#e74c3c;
+    font-size:12px;
+    min-height:14px;
+    margin-top:3px;
+}
+
+/* BOTONES */
+.btnContainer{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    transition:0.3s;
+}
+
+/* BOTON ENVIAR */
+.submit{
+    background:#3498db;
+    color:white;
+}
+
+.submit:hover{
+    background:#2980b9;
+}
+
+/* BOTON RESET */
+.reset{
+    background:#95a5a6;
+    color:white;
+}
+
+.reset:hover{
+    background:#7f8c8d;
+}
+
+/* MENSAJE EXITO */
+.success{
+    margin-top:15px;
+    font-weight:bold;
+    color:#27ae60;
+    text-align:center;
+}
+
+.links {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .links a {
+    display: block;
+    font-size: 13px;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 5px;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+/* ---------------- RESPONSIVE ---------------- */
+/* TABLETS */
+@media (max-width:768px){
+    form{ padding:20px; }
+    h2{font-size:22px;}
+}
+
+/* CELULARES */
+@media (max-width:480px){
+    form{padding:18px;}
+    h2{font-size:20px;}
+    input{font-size:13px; padding:9px;}
+    button{font-size:13px; padding:9px;}
+    .btnContainer{ flex-direction:column; }
+}
+
+/* Estilos para ventana modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2.5rem; /* Un poco más de aire en los bordes */
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%; /* Para que sea responsivo en móviles */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    
+    /* Eliminamos el translate negativo para que esté centrado perfecto */
+    transform: translateY(0); 
+    transition: all 0.3s ease;
+}
+
+/* Espaciado del contenido interno */
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.modal-content p {
+    margin-bottom: 2rem; /* Este es el espacio clave debajo del mensaje */
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+.modal-content button {
+    display: inline-block; /* Asegura que respete márgenes */
+    padding: 12px 28px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+.modal-overlay.show {
+    display: flex;  
+}

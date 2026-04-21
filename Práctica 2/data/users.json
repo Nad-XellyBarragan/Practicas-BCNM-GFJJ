@@ -1,0 +1,63 @@
+[
+  {
+    "nombre": "Juan",
+    "correo": "Juan@gmail.com",
+    "contrasena": "$2a$12$oe8ZEXD7gbxcUSF5ocTzmuBm/Zcamxb7Rod6imj1L7hvYZe1iPTzW",
+    "preguntarc": "Color favorito",
+    "respuestarc": "$2a$12$bI82EFYS8kBoMvEHvi62HeQvMgj5Myo/Qs848uh6UMyVnBFBJ1oAO"
+  },
+  {
+    "nombre": "Pedro",
+    "correo": "Pedro@gmail.com",
+    "contrasena": "$2a$12$61X4CJQH9NoYOuedTpWAcO1O0hiZdoYMqgr7ImhbYJrYJHDNtH8F.",
+    "preguntarc": "Lugar favorito",
+    "respuestarc": "$2a$12$4IHW0sLiKQBQqryz57k8Qeyx7X1s7aJIhcjZqLVD7TMNYKNQyZsHa"
+  },
+  {
+    "nombre": "María",
+    "correo": "Maria@gmail.com",
+    "contrasena": "$2a$12$NXylO9/W4jJDvkATDCyh8.xHVU4fGvd7h25l/csKbF71SVBm3F5BC",
+    "preguntarc": "Color favorito",
+    "respuestarc": "$2a$12$qtaQFt3VgMiAVYqlOhjQWeKLvFosmK8gnZhAaU9qaEPeiAGfozebi"
+  },
+  {
+    "nombre": "Mario",
+    "contrasena": "$2b$12$AJ38HsRIehPtBsCvoGixveeFM0gyE4a3I6SLDv0zhLwW4L8t7D4wK",
+    "preguntarc": "Ciudad favorita",
+    "respuestarc": "$2b$12$vqVDUd60hPy1F92.nvQkPOYZK0UlNG5iJ7ctugi3TPUm7Tmf4ZFNu",
+    "correo": "mario@gmail.com",
+    "fecha": "2026-03-25T19:05:05.038Z"
+  },
+  {
+    "nombre": "Omar",
+    "contrasena": "$2b$12$Q2E.ZDmkGZ3BV1SIwUzOSOk3SBBTYjmxOWOJ9EZVwQh57cLJFJnxS",
+    "preguntarc": "Ciudad favorita",
+    "respuestarc": "$2b$12$CnachhIwwc.0.vcapUH6H.04B6TVGzS69IjPuKzWldbqgCI4ciIZ2",
+    "correo": "omar@gmail.com",
+    "fecha": "2026-03-25T19:30:17.501Z"
+  },
+  {
+    "nombre": "Julian",
+    "contrasena": "$2b$12$in7vSG69ebCMNgrWiD55buRAZgo7G.Oof0cCIRG3x/4nZ/ZmHMemi",
+    "preguntarc": "color",
+    "respuestarc": "$2b$12$vm/p7o3A9wKRW5opA0OpDeVCIeECcXiB7jDpO2f.6w.fkRJEiEAoi",
+    "correo": "julian@gmail.com",
+    "fecha": "2026-04-20T04:39:49.540Z"
+  },
+  {
+    "nombre": "nad",
+    "contrasena": "$2b$12$88N.ytU7cTVE/U/RdsQ4PudadOb47bfnNjA9DaURvykxzwGnC0EAC",
+    "preguntarc": "mascota",
+    "respuestarc": "$2b$12$XbBt2.8wcUfp9.dsj5aVQuFqhA8Xn4SNgP1SN.EoIqJWaB8YsP1HS",
+    "correo": "nad@gmail.com",
+    "fecha": "2026-04-20T09:47:49.142Z"
+  },
+  {
+    "nombre": "jose",
+    "contrasena": "$2b$12$forLHHIqGryXtdPITj3q1e30g/O6jU2NaAzW5ccQntGw9hYbNWYvS",
+    "preguntarc": "personaje",
+    "respuestarc": "$2b$12$tS..RpxjxrJog9TiNYJt8e1DyLvAsSvKUL78NlY79PlJJSXHtM7vm",
+    "correo": "jose@gmail.com",
+    "fecha": "2026-04-20T09:49:29.952Z"
+  }
+]
